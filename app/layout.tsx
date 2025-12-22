@@ -4,7 +4,8 @@ import { ReactLenis } from 'lenis/react';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import { CustomCursor } from '@/components/ui/CustomCursor';
 import { Navbar } from '@/components/ui/Navbar';
-import { ProgressBar } from '@/components/ui/ProgressBar'; // <--- ÚJ IMPORT
+import { WebGLPreloader } from '@/components/ui/WebGLPreloader';
+import { ProgressBar } from '@/components/ui/ProgressBar';
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -41,6 +42,7 @@ export default function RootLayout({
         suppressHydrationWarning={true}
       >
         <ReactLenis root>
+          <WebGLPreloader />
           <CustomCursor />
           <ProgressBar />
           {children}
