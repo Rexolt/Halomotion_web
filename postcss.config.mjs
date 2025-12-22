@@ -1,6 +1,9 @@
+/** @type {import('postcss-load-config').Config} */
 const config = {
   plugins: {
-    "@tailwindcss/postcss": {},
+    // A régi 'tailwindcss' helyett most már ez kell:
+    '@tailwindcss/postcss': {}, 
+    autoprefixer: {},
   },
 };
 
