@@ -1,7 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: 'export', // <--- EZ KRITIKUS A GITHUB PAGES-HEZ!
+  output: 'export', 
+  basePath: "/HaloMotion-web", 
   
   images: {
     unoptimized: true, // <--- EZ IS KÖTELEZŐ (Szerver hiányában)
@@ -29,9 +30,7 @@ const nextConfig: NextConfig = {
       }
     ],
   },
-  // Ha a weboldalad címe NEM "username.github.io", hanem "username.github.io/repo-nev",
-  // akkor vedd ki a kommentet az alábbi sor elől és írd át a repo nevedre:
-  // basePath: "/repo-nev",
+
 };
 
 export default nextConfig;
