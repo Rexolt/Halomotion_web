@@ -18,7 +18,10 @@ export const Contact = () => {
           <h2 className="font-display text-5xl md:text-8xl leading-none tracking-tighter text-white mb-8">
             START<br /><span className="text-gray-700">PROJECT</span>
           </h2>
-          <a href="mailto:studio@halomotion.hu" className="text-2xl text-halo-red border-b border-red-900/30 pb-2">studio@halomotion.hu</a>
+          <a href="mailto:team@halomotion.hu" className="text-2xl text-halo-red border-b border-red-900/30 pb-2 cursor-pointer">
+            <p>team@halomotion.hu</p>
+            <p><br /></p>
+          </a>
         </div>
 
         <form onSubmit={handleSubmit} className="flex flex-col gap-8">
