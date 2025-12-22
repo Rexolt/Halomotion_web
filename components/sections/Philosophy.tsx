@@ -25,7 +25,7 @@ export const Philosophy = ({ text }: { text: string }) => {
   const words = text.split(" ");
 
   return (
-    <section ref={container} className="py-24 px-6 md:py-40 md:px-20 bg-halo-black border-t border-white/10">
+    <section ref={container} className="py-20 px-6 md:py-40 md:px-20 bg-halo-black border-t border-white/10">
       <div className="max-w-6xl mx-auto">
         <span className="text-halo-red font-display text-xs tracking-widest mb-8 block">PHILOSOPHY</span>
         <p className="text-2xl md:text-6xl leading-[1.4] font-light text-white">

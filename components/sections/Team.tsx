@@ -8,7 +8,7 @@ const team = [
 
 export const Team = () => {
   return (
-    <section id="team" className="py-32 px-6 md:px-20 bg-halo-black border-t border-white/10">
+    <section id="team" className="py-20 md:py-32 px-6 md:px-20 bg-halo-black border-t border-white/10">
       <div className="mb-20">
         <span className="text-halo-red font-display text-xs tracking-widest block mb-4">THE SQUAD</span>
         <h2 className="font-display text-5xl md:text-7xl text-white">CREATIVE <span className="text-gray-700">MINDS</span></h2>
@@ -18,11 +18,11 @@ export const Team = () => {
         {team.map((member, i) => (
           <div key={i} className="group cursor-pointer">
             <div className="relative w-full aspect-[3/4] overflow-hidden bg-[#111] mb-6 grayscale group-hover:grayscale-0 transition-all duration-700 ease-out">
-              <Image 
-                src={member.img} 
-                alt={member.name} 
-                fill 
-                className="object-cover transform group-hover:scale-105 transition-transform duration-700" 
+              <Image
+                src={member.img}
+                alt={member.name}
+                fill
+                className="object-cover transform group-hover:scale-105 transition-transform duration-700"
                 sizes="(max-width: 768px) 100vw, 33vw"
               />
             </div>

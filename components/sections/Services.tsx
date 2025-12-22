@@ -32,7 +32,7 @@ const ServiceCard = ({ number, title, desc }: { number: string, title: string, d
         const dx = mouse.x - dot.x;
         const dy = mouse.y - dot.y;
         const dist = Math.sqrt(dx * dx + dy * dy);
-        
+
         if (dist < 100) {
           const force = (100 - dist) / 100;
           dot.x -= (dx / dist) * force * 2;
@@ -49,7 +49,7 @@ const ServiceCard = ({ number, title, desc }: { number: string, title: string, d
       });
       requestAnimationFrame(animate);
     };
-    
+
     const animId = requestAnimationFrame(animate);
 
     const onMove = (e: MouseEvent) => {
@@ -70,7 +70,7 @@ const ServiceCard = ({ number, title, desc }: { number: string, title: string, d
   }, []);
 
   return (
-    <div className="group border border-white/5 bg-white/[0.02] p-8 md:p-12 min-h-[300px] md:min-h-[400px] flex flex-col justify-between relative overflow-hidden">
+    <div className="group border border-white/5 bg-white/[0.02] p-6 md:p-12 min-h-[300px] md:min-h-[400px] flex flex-col justify-between relative overflow-hidden">
       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full opacity-0 group-hover:opacity-50 transition-opacity duration-500 pointer-events-none" />
       <span className="font-display text-2xl text-halo-red">{number}</span>
       <div className="z-10 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">

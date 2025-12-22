@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   output: 'export', 
-  basePath: "/HaloMotion-web", 
+  basePath: process.env.NODE_ENV === 'production' ? "/HaloMotion-web" : "", 
   
   images: {
     unoptimized: true, // <--- EZ IS KÖTELEZŐ (Szerver hiányában)

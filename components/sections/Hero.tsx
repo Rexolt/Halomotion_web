@@ -3,7 +3,7 @@ import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { RecIndicator } from '@/components/ui/RecIndicator'; // <--- ÚJ IMPORT
+import { RecIndicator } from '@/components/ui/RecIndicator';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -12,10 +12,9 @@ export const Hero = ({ title1 = "BEYOND", title2 = "REALITY", videoUrl = "" }) =
   const videoRef = useRef(null);
 
   useGSAP(() => {
-    // ... (az animációs kódod marad változatlan) ...
     const tl = gsap.timeline();
     tl.from(".hero-char", { yPercent: 120, duration: 1.5, ease: "power4.out", stagger: 0.05 });
-    
+
     gsap.to(videoRef.current, {
       yPercent: 30,
       ease: "none",
@@ -24,17 +23,17 @@ export const Hero = ({ title1 = "BEYOND", title2 = "REALITY", videoUrl = "" }) =
   }, { scope: container });
 
   return (
-    <section ref={container} className="relative h-screen w-full flex flex-col justify-center items-center text-center overflow-hidden bg-black">
-      
-      {/* KAMERA OVERLAY (REC, IDŐKÓD) */}
-      <RecIndicator />  {/* <--- IDE KERÜLT A DINAMIKUS MODUL */}
+    // UPDATED: h-[100dvh] handles mobile address bars correctly
+    <section ref={container} className="relative h-[100dvh] w-full flex flex-col justify-center items-center text-center overflow-hidden bg-black">
+
+      <RecIndicator />
 
       <div className="absolute inset-0 z-0 w-full h-full">
-        <video 
-          ref={videoRef} 
-          autoPlay 
-          muted 
-          loop 
+        <video
+          ref={videoRef}
+          autoPlay
+          muted
+          loop
           playsInline
           preload="auto"
           suppressHydrationWarning={true}
@@ -45,10 +44,10 @@ export const Hero = ({ title1 = "BEYOND", title2 = "REALITY", videoUrl = "" }) =
         </video>
         <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/30 to-[#050505]"></div>
       </div>
-      
-      {/* ... (Címsor marad) ... */}
+
       <div className="relative z-10 flex flex-col items-center w-full px-4">
-        <h1 className="font-display text-[14vw] md:text-9xl font-bold leading-[0.9] tracking-tighter mix-blend-overlay opacity-90 text-white">
+        {/* UPDATED: text-6xl on mobile, scaling up to 9xl on desktop */}
+        <h1 className="font-display text-[12vw] md:text-[14vw] lg:text-9xl font-bold leading-[0.9] tracking-tighter mix-blend-overlay opacity-90 text-white">
           <div className="overflow-hidden"><span className="hero-char block">{title1}</span></div>
           <div className="overflow-hidden"><span className="hero-char block text-transparent" style={{ WebkitTextStroke: '1px rgba(255,255,255,0.8)' }}>{title2}</span></div>
         </h1>

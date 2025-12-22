@@ -1,5 +1,5 @@
 'use client';
-import { useRef, useEffect } from 'react';
+import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -13,7 +13,7 @@ const steps = [
     phase: 'PRE-PRODUCTION',
     title: 'THE VISION', 
     desc: 'Mielőtt az első képkocka rögzülne, lebontjuk az üzenetet az atomjaira. Storyboard, casting, location scouting – a káoszban rendet teremtünk.', 
-    img: 'https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    img: 'https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?q=80&w=2070',
     color: '#dc2626'
   },
   { 
@@ -21,7 +21,7 @@ const steps = [
     phase: 'PRODUCTION',
     title: 'THE ACTION', 
     desc: 'A forgatás napja a szentírás. High-end kamerák, fények tánca és precíz rendezés. Nincs felesleges mozdulat, csak a tökéletes pillanat vadászata.', 
-    img: 'https://images.unsplash.com/photo-1541701494587-cb58502866ab?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    img: 'https://images.unsplash.com/photo-1541701494587-cb58502866ab?q=80&w=1470',
     color: '#ffffff'
   },
   { 
@@ -29,7 +29,7 @@ const steps = [
     phase: 'POST-PRODUCTION',
     title: 'THE MAGIC', 
     desc: 'A vágószoba csendjében születik meg a ritmus. Color grading, sound design és VFX. Itt válik a nyersanyagból valódi, lélegző történet.', 
-    img: 'https://images.unsplash.com/photo-1704806050523-177b86dec093?q=80&w=763&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    img: 'https://images.unsplash.com/photo-1704806050523-177b86dec093?q=80&w=763',
     color: '#dc2626'
   }
 ];
@@ -41,67 +41,63 @@ export const Process = () => {
     const cards = gsap.utils.toArray('.process-card');
     
     cards.forEach((card: any, index) => {
-      // Az utolsó kártyát nem kell animálni (az marad felül)
       if (index === cards.length - 1) return;
-
       const nextCard = cards[index + 1];
 
-      // Skálázás és sötétedés effekt, ahogy a következő kártya rájön
       gsap.to(card, {
-        scale: 0.9, // Kicsit összemeny
-        opacity: 0.4, // Elhalványul
-        filter: 'blur(5px)', // Homályosodik
+        scale: 0.9,
+        opacity: 0.4,
+        filter: 'blur(5px)',
         ease: 'none',
         scrollTrigger: {
           trigger: card,
           start: 'top top',
           end: 'bottom top',
           scrub: true,
-          pin: true, // "Odaragasztjuk" a képernyőhöz
-          pinSpacing: false, // Hogy a következő kártya rácsússzon
+          pin: true,
+          pinSpacing: false,
         }
       });
     });
   }, { scope: container });
 
   return (
-    <section ref={container} className="relative bg-halo-black py-20 pb-40 px-4 md:px-10">
+    <section ref={container} className="relative bg-halo-black py-10 md:py-20 pb-20 md:pb-40 px-3 md:px-10">
       
-      {/* Szekció Cím */}
-      <div className="mb-20 px-6 md:px-10">
+      <div className="mb-12 md:mb-20 px-2 md:px-10">
         <span className="text-halo-red font-display text-xs tracking-widest block mb-4">WORKFLOW</span>
-        <h2 className="font-display text-5xl md:text-7xl text-white">THE <span className="text-transparent" style={{ WebkitTextStroke: '1px rgba(255,255,255,0.5)' }}>PROCESS</span></h2>
+        <h2 className="font-display text-4xl md:text-7xl text-white">THE <span className="text-transparent" style={{ WebkitTextStroke: '1px rgba(255,255,255,0.5)' }}>PROCESS</span></h2>
       </div>
 
       <div className="flex flex-col items-center w-full">
         {steps.map((step, i) => (
           <div 
             key={i} 
-            className="process-card sticky top-24 w-full max-w-6xl h-[70vh] md:h-[80vh] rounded-3xl overflow-hidden border border-white/10 bg-[#0a0a0a] shadow-2xl flex flex-col md:flex-row mb-10 origin-top"
+            // UPDATED: Adjusted height for mobile (60vh) vs desktop (80vh)
+            className="process-card sticky top-20 w-full max-w-6xl h-[60vh] md:h-[80vh] rounded-2xl md:rounded-3xl overflow-hidden border border-white/10 bg-[#0a0a0a] shadow-2xl flex flex-col md:flex-row mb-6 md:mb-10 origin-top"
             style={{ 
-              zIndex: i + 1, // Rétegezés: a későbbiek feljebb vannak
-              top: `calc(10vh + ${i * 20}px)` // Lépcsőzetes eltolás
+              zIndex: i + 1, 
+              top: `calc(10vh + ${i * 10}px)` 
             }}
           >
             
-            {/* Bal oldal: Szöveg */}
-            <div className="w-full md:w-1/2 p-8 md:p-16 flex flex-col justify-center relative z-10 bg-black/80 backdrop-blur-sm md:bg-transparent">
-              {/* Vékony vonal dekoráció */}
+            {/* UPDATED: Text overlay on mobile (absolute), side-by-side on desktop (relative) */}
+            <div className="absolute inset-0 md:relative w-full md:w-1/2 p-6 md:p-16 flex flex-col justify-end md:justify-center z-20 bg-gradient-to-t from-black via-black/60 to-transparent md:bg-none">
               <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-halo-red to-transparent opacity-50 hidden md:block"></div>
               
-              <span className="font-display text-6xl md:text-9xl font-bold text-white/5 absolute top-4 left-4 select-none">{step.id}</span>
+              <span className="font-display text-5xl md:text-9xl font-bold text-white/10 absolute top-4 left-4 md:top-4 md:left-4 select-none">{step.id}</span>
               
               <div className="relative">
-                <span className="text-halo-red text-xs font-display tracking-[0.3em] uppercase mb-4 block">{step.phase}</span>
-                <h3 className="font-display text-4xl md:text-6xl text-white mb-6 leading-none">{step.title}</h3>
-                <p className="text-gray-400 font-sans text-lg md:text-xl font-light leading-relaxed max-w-md">
+                <span className="text-halo-red text-[10px] md:text-xs font-display tracking-[0.3em] uppercase mb-2 md:mb-4 block">{step.phase}</span>
+                <h3 className="font-display text-3xl md:text-6xl text-white mb-3 md:mb-6 leading-none">{step.title}</h3>
+                <p className="text-gray-300 md:text-gray-400 font-sans text-sm md:text-xl font-light leading-relaxed max-w-md drop-shadow-md">
                   {step.desc}
                 </p>
               </div>
             </div>
 
-            {/* Jobb oldal: Kép/Videó */}
-            <div className="w-full md:w-1/2 h-full relative">
+            {/* UPDATED: Image fills container on mobile */}
+            <div className="absolute inset-0 md:relative w-full md:w-1/2 h-full z-0">
               <Image 
                 src={step.img} 
                 alt={step.title} 
@@ -109,8 +105,7 @@ export const Process = () => {
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover transition-transform duration-1000 hover:scale-110"
               />
-              {/* Overlay, hogy a szöveg olvasható legyen mobilon */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent md:bg-gradient-to-l md:from-transparent md:to-black/80"></div>
+              <div className="absolute inset-0 bg-black/20 md:bg-gradient-to-l md:from-transparent md:to-black/80"></div>
             </div>
 
           </div>

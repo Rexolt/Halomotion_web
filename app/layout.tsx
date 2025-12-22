@@ -36,15 +36,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="hu" className="bg-[#050505]">
-      <body 
+      <body
         className={`${cormorant.variable} ${syncopate.variable} font-sans antialiased overflow-x-hidden selection:bg-red-900 selection:text-white`}
         suppressHydrationWarning={true}
       >
         <ReactLenis root>
           <CustomCursor />
           <ProgressBar />
-          <Navbar /> {/* <--- IDE KERÜL A NAVBAR (Minden oldal tetején ott lesz) */}
           {children}
+          <Navbar />
+          <div id="portal-root" className="relative z-[9999999]"></div>
         </ReactLenis>
         <GoogleAnalytics gaId="G-DEMO123" />
       </body>
