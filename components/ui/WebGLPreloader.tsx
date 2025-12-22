@@ -7,7 +7,7 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 
 const ParticleField = ({ setFinished }: { setFinished: (val: boolean) => void }) => {
-    const ref = useRef<any>();
+    const ref = useRef<any>(null);
     // @ts-ignore
     const sphere = useMemo(() => random.inSphere(new Float32Array(6000), { radius: 1.5 }), []);
 
