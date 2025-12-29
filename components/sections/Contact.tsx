@@ -21,7 +21,7 @@ export const Contact = () => {
           <p className="text-gray-400 text-sm md:text-base mb-8 max-w-md">
             Csapatunk 1 napon belül megnézi az üzenetet és válaszol.
           </p>
-          <a href="mailto:studio@halomotion.hu" className="text-2xl text-halo-red border-b border-red-900/30 pb-2">studio@halomotion.hu</a>
+          <a href="mailto:team@halomotion.hu" className="text-2xl text-halo-red border-b border-red-900/30 pb-2">team@halomotion.hu</a>
         </div>
 
         <form onSubmit={handleSubmit} className="flex flex-col gap-8">
