@@ -10,6 +10,13 @@ interface PageProps {
     }>;
 }
 
+// Required for static export
+export async function generateStaticParams() {
+    // If you plan to use Builder.io for multiple pages, you would fetch them here.
+    // For now, returning an empty array solves the build error by generating no extra static pages.
+    return [];
+}
+
 export default async function Page(props: PageProps) {
     const params = await props.params;
     const model = "page";
