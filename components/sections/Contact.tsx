@@ -1,6 +1,6 @@
 // components/sections/Contact.tsx
 'use client';
-//import { useAnalytics } from '@/hooks/useAnalytics'; // Amit az előző válaszban írtam
+//import { useAnalytics } from '@/hooks/useAnalytics'; 
 
 export const Contact = () => {
   // const { trackEvent } = useAnalytics(); 
@@ -16,8 +16,11 @@ export const Contact = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
         <div>
           <h2 className="font-display text-5xl md:text-8xl leading-none tracking-tighter text-white mb-8">
-            START<br /><span className="text-gray-700">PROJECT</span>
+            AJÁNLAT<br /><span className="text-gray-700">KÉRÉS</span>
           </h2>
+          <p className="text-gray-400 text-sm md:text-base mb-8 max-w-md">
+            Csapatunk 1 napon belül megnézi az üzenetet és válaszol.
+          </p>
           <a href="mailto:studio@halomotion.hu" className="text-2xl text-halo-red border-b border-red-900/30 pb-2">studio@halomotion.hu</a>
         </div>
 

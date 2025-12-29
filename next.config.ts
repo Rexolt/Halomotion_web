@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
   basePath: process.env.NODE_ENV === 'production' ? "/HaloMotion-web" : "", 
   
   images: {
-    unoptimized: true, // <--- EZ IS KÖTELEZŐ (Szerver hiányában)
+    unoptimized: true, 
     remotePatterns: [
       {
         protocol: 'https',
@@ -19,7 +19,7 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'assets.mixkit.co',
       },
-      // Ezeket is hozzáadtam, mert szerepeltek a korábbi kódokban:
+      
       {
         protocol: 'https',
         hostname: 'plus.unsplash.com',

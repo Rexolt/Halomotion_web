@@ -28,9 +28,9 @@ export const Philosophy = ({ text }: { text: string }) => {
     <section ref={container} className="py-20 px-6 md:py-40 md:px-20 bg-halo-black border-t border-white/10">
       <div className="max-w-6xl mx-auto">
         <span className="text-halo-red font-display text-xs tracking-widest mb-8 block">PHILOSOPHY</span>
-        <p className="text-2xl md:text-6xl leading-[1.4] font-light text-white">
+        <p className="text-xl md:text-4xl leading-[1.6] font-light text-white">
           {words.map((word, i) => (
-            <span key={i} className="reveal-word inline-block mr-3 opacity-10 transition-opacity">{word}</span>
+            <span key={i} className="reveal-word inline-block mr-2 opacity-10 transition-opacity">{word}</span>
           ))}
         </p>
       </div>

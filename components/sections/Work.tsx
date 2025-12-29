@@ -63,9 +63,9 @@ export const Work = ({ projects }: { projects: Project[] }) => {
 
         {/* UPDATED: Reduced padding for mobile */}
         <div className="px-4 md:px-20 py-10 md:py-20">
-          <span className="text-halo-red font-display text-xs tracking-widest block mb-4">PORTFOLIO</span>
+          <span className="text-halo-red font-display text-xs tracking-widest block mb-4">MUNKÁINK</span>
           {/* UPDATED: Responsive font size */}
-          <h2 className="font-display text-4xl md:text-8xl text-white">SELECTED WORKS</h2>
+          <h2 className="font-display text-4xl md:text-8xl text-white">KIEMELT MUNKÁINK</h2>
         </div>
 
         <div className="px-3 md:px-10 flex flex-col gap-10 md:gap-20">
@@ -109,7 +109,7 @@ export const Work = ({ projects }: { projects: Project[] }) => {
                   onClick={() => openProject(project)}
                   className="pointer-events-auto px-6 py-2 md:px-8 md:py-3 mt-4 md:mt-0 border border-white/30 rounded-full text-white text-[10px] md:text-xs font-display tracking-widest uppercase hover:bg-white hover:text-black transition-colors backdrop-blur-sm bg-black/20 w-fit"
                 >
-                  View Case
+                  MEGTEKINTÉS
                 </button>
               </div>
             </div>
@@ -125,7 +125,7 @@ export const Work = ({ projects }: { projects: Project[] }) => {
             onClick={closeProject}
             className="absolute top-5 right-5 md:top-8 md:right-8 text-white/70 hover:text-white transition-colors z-[10000000]"
           >
-            <span className="font-display text-sm md:text-base tracking-widest border border-white/20 px-6 py-2 rounded-full hover:bg-white hover:text-black transition-colors bg-black">CLOSE</span>
+            <span className="font-display text-sm md:text-base tracking-widest border border-white/20 px-6 py-2 rounded-full hover:bg-white hover:text-black transition-colors bg-black">BEZÁRÁS</span>
           </button>
 
           <div

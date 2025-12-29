@@ -1,0 +1,97 @@
+{
+    "components": [
+        {
+            "name": "Hero",
+            "inputs": [
+                {
+                    "name": "title1",
+                    "type": "string",
+                    "defaultValue": "BEYOND"
+                },
+                {
+                    "name": "title2",
+                    "type": "string",
+                    "defaultValue": "REALITY"
+                },
+                {
+                    "name": "videoUrl",
+                    "type": "url",
+                    "defaultValue": "https://cdn.pixabay.com/video/2023/02/25/152085-802335503_large.mp4"
+                }
+            ]
+        },
+        {
+            "name": "Philosophy",
+            "inputs": [
+                {
+                    "name": "text",
+                    "type": "longText",
+                    "defaultValue": "A HaloMotion nem csupán rögzít. Mi a csendet vesszük fel két szívdobbanás között."
+                }
+            ]
+        },
+        {
+            "name": "Marquee",
+            "inputs": []
+        },
+        {
+            "name": "Services",
+            "inputs": []
+        },
+        {
+            "name": "Process",
+            "inputs": []
+        },
+        {
+            "name": "Work",
+            "inputs": [
+                {
+                    "name": "projects",
+                    "type": "list",
+                    "subFields": [
+                        {
+                            "name": "id",
+                            "type": "string",
+                            "required": true
+                        },
+                        {
+                            "name": "title",
+                            "type": "string",
+                            "required": true
+                        },
+                        {
+                            "name": "category",
+                            "type": "string"
+                        },
+                        {
+                            "name": "image",
+                            "type": "file",
+                            "allowedFileTypes": [
+                                "jpeg",
+                                "jpg",
+                                "png",
+                                "webp"
+                            ]
+                        },
+                        {
+                            "name": "video",
+                            "type": "file",
+                            "allowedFileTypes": [
+                                "mp4",
+                                "webm"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Team",
+            "inputs": []
+        },
+        {
+            "name": "Contact",
+            "inputs": []
+        }
+    ]
+}

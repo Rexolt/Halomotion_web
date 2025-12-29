@@ -6,6 +6,7 @@ import { CustomCursor } from '@/components/ui/CustomCursor';
 import { Navbar } from '@/components/ui/Navbar';
 import { WebGLPreloader } from '@/components/ui/WebGLPreloader';
 import { ProgressBar } from '@/components/ui/ProgressBar';
+import { CookieConsent } from '@/components/ui/CookieConsent';
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -45,6 +46,7 @@ export default function RootLayout({
           <WebGLPreloader />
           <CustomCursor />
           <ProgressBar />
+          <CookieConsent />
           {children}
           <Navbar />
           <div id="portal-root" className="relative z-[9999999]"></div>

@@ -85,9 +85,9 @@ export const Services = () => {
   return (
     <section id="services" className="relative py-20 px-4 md:px-20 bg-[#080808]">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-1">
-        <ServiceCard number="01" title="Commercial" desc="Reklámfilmek, amik nem eladnak, hanem érzelmet közvetítenek." />
-        <ServiceCard number="02" title="Music Video" desc="Vizuális szimfóniák, ahol minden vágás egy ütem." />
-        <ServiceCard number="03" title="Brand ID" desc="Arculat, ami nem csak látszik, de érezhető is." />
+        <ServiceCard number="01" title="REKLÁMFILM" desc="Reklámfilmek, amik nem eladnak, hanem érzelmet közvetítenek." />
+        <ServiceCard number="02" title="IMÁZSFILM" desc="Vizuális szimfóniák, ahol minden vágás egy ütem." />
+        <ServiceCard number="03" title="TERMÉKBEMUTATÓ" desc="Arculat, ami nem csak látszik, de érezhető is." />
       </div>
     </section>
   );

@@ -23,7 +23,7 @@ export const Hero = ({ title1 = "BEYOND", title2 = "REALITY", videoUrl = "" }) =
   }, { scope: container });
 
   return (
-    // UPDATED: h-[100dvh] handles mobile address bars correctly
+    
     <section ref={container} className="relative h-[100dvh] w-full flex flex-col justify-center items-center text-center overflow-hidden bg-black">
 
       <RecIndicator />
@@ -46,7 +46,7 @@ export const Hero = ({ title1 = "BEYOND", title2 = "REALITY", videoUrl = "" }) =
       </div>
 
       <div className="relative z-10 flex flex-col items-center w-full px-4">
-        {/* UPDATED: text-6xl on mobile, scaling up to 9xl on desktop */}
+        
         <h1 className="font-display text-[12vw] md:text-[14vw] lg:text-9xl font-bold leading-[0.9] tracking-tighter mix-blend-overlay opacity-90 text-white">
           <div className="overflow-hidden"><span className="hero-char block">{title1}</span></div>
           <div className="overflow-hidden"><span className="hero-char block text-transparent" style={{ WebkitTextStroke: '1px rgba(255,255,255,0.8)' }}>{title2}</span></div>
